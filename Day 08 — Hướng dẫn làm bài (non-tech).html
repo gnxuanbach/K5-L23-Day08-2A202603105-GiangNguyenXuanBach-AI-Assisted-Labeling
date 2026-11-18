@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#bat-dau -->
+<html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day 08 — Hướng dẫn làm bài (non-tech)</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --ink: #1c2430;
+    --muted: #5a6573;
+    --line: #d9dee7;
+    --teal: #0c7c72;
+    --teal-soft: #e4f5f2;
+    --orange: #c45c12;
+    --orange-soft: #fff0e4;
+    --red: #b42318;
+    --red-soft: #fdecea;
+    --green: #1b7a3d;
+    --green-soft: #e6f6eb;
+    --code-bg: #15202b;
+    --code-fg: #d7ece8;
+    --nav: #12202c;
+    --shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 8px 24px rgba(16, 24, 40, .06);
+    --font: "Segoe UI", "Be Vietnam Pro", system-ui, sans-serif;
+    --mono: Consolas, "Cascadia Mono", "Courier New", monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+  }
+  a { color: var(--teal); }
+  img { max-width: 100%; height: auto; display: block; }
+  code, pre { font-family: var(--mono); }
+
+  /* TOP BAR */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--nav); color: #e8eef3;
+    border-bottom: 1px solid #243647;
+  }
+  .topbar-inner {
+    max-width: 920px; margin: 0 auto;
+    padding: 12px 16px 10px;
+  }
+  .topbar h1 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .topbar p {
+    margin: 2px 0 10px;
+    font-size: .8rem;
+    color: #9db0bf;
+  }
+  .progress-row {
+    display: flex; align-items: center; gap: 10px;
+    font-size: .78rem; color: #9db0bf;
+  }
+  .progress {
+    flex: 1; height: 7px; background: rgba(255,255,255,.12);
+    border-radius: 99px; overflow: hidden;
+  }
+  .progress > span {
+    display: block; height: 100%; width: 0;
+    background: #3dc7bd; transition: width .2s;
+  }
+  .toc {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: 10px;
+  }
+  .toc a {
+    text-decoration: none;
+    color: #d5e3ea;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: .75rem;
+    font-weight: 600;
+  }
+  .toc a:hover { background: rgba(255,255,255,.14); color: #fff; }
+
+  /* PAGE */
+  .wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 20px 16px 72px;
+  }
+  .hero {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 18px;
+    box-shadow: var(--shadow);
+    margin-bottom: 18px;
+  }
+  .hero .eyebrow {
+    margin: 0 0 6px;
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 700;
+  }
+  .hero h2 {
+    margin: 0 0 8px;
+    font-size: clamp(1.35rem, 3vw, 1.85rem);
+    line-height: 1.2;
+  }
+  .hero > p { margin: 0; color: var(--muted); }
+  .chips {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: 14px;
+  }
+  .chip {
+    background: #eef1f5;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: .75rem;
+    font-weight: 600;
+    color: #3a4654;
+  }
+  .toolbar {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 14px;
+  }
+  .btn {
+    appearance: none; border: 0; cursor: pointer;
+    border-radius: 8px; padding: 8px 12px;
+    font: inherit; font-weight: 700; font-size: .88rem;
+    background: var(--teal); color: #fff; text-decoration: none;
+    display: inline-flex; align-items: center;
+  }
+  .btn.ghost { background: #e8ecf1; color: var(--ink); }
+
+  .section { margin-top: 28px; scroll-margin-top: 110px; }
+  .section > h2 {
+    margin: 0 0 6px;
+    font-size: 1.25rem;
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  }
+  .badge {
+    font-size: .7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .04em;
+    background: var(--teal-soft); color: var(--teal);
+    border-radius: 999px; padding: 3px 8px;
+  }
+  .lede { margin: 0 0 12px; color: var(--muted); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 14px 14px;
+    margin: 10px 0;
+    box-shadow: 0 1px 0 rgba(16,24,40,.03);
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 10px 12px;
+    align-items: start;
+  }
+  .chk {
+    width: 26px; height: 26px;
+    border-radius: 7px;
+    border: 2px solid #c5ccd6;
+    background: #fff;
+    color: transparent;
+    font-weight: 800;
+    cursor: pointer;
+    display: grid; place-items: center;
+    padding: 0; margin-top: 1px;
+  }
+  .step.done .chk {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+  }
+  .step.done { opacity: .82; }
+  .step h3 { margin: 0; font-size: 1rem; }
+  .meta { margin: 2px 0 8px; color: var(--muted); font-size: .86rem; }
+  .body { min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+
+  .fig {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fafbfc;
+  }
+  .fig img { width: 100%; }
+  .fig figcaption {
+    padding: 9px 11px;
+    font-size: .84rem;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    background: #fff;
+  }
+  .fig figcaption b { color: var(--ink); }
+
+  .callout {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 8px 10px;
+    padding: 10px 12px;
+    border-radius: 9px;
+    font-size: .9rem;
+  }
+  .callout .tag {
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding-top: 2px;
+  }
+  .callout.note { background: #eef1f5; }
+  .callout.note .tag { color: var(--muted); }
+  .callout.ok { background: var(--green-soft); }
+  .callout.ok .tag { color: var(--green); }
+  .callout.warn { background: var(--orange-soft); }
+  .callout.warn .tag { color: var(--orange); }
+  .callout.bad { background: var(--red-soft); }
+  .callout.bad .tag { color: var(--red); }
+
+  .codebox {
+    background: var(--code-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #243647;
+  }
+  .codebox .bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-bottom: 1px solid #243647;
+    color: #7fa6b3;
+    font-family: var(--mono);
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+  .copy {
+    background: transparent;
+    border: 1px solid #355468;
+    color: #cdeee9;
+    border-radius: 6px;
+    font: inherit;
+    font-size: .72rem;
+    padding: 2px 8px;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .copy:hover { border-color: #3dc7bd; }
+  .codebox pre {
+    margin: 0;
+    padding: 11px 12px;
+    overflow-x: auto;
+    color: var(--code-fg);
+    font-size: .8rem;
+    line-height: 1.55;
+    white-space: pre;
+  }
+  code.i {
+    font-size: .86em;
+    background: #e8ecf1;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  ol, ul { margin: 0; padding-left: 1.2rem; }
+  li { margin: 4px 0; }
+
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 700px) {
+    .grid2 { grid-template-columns: 1fr; }
+    .callout { grid-template-columns: 1fr; }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .88rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 9px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--muted);
+  }
+
+  .checkrow {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 10px;
+    align-items: start;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .checkrow:last-child { border-bottom: 0; }
+  .checkrow.done { opacity: .75; }
+
+  footer {
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: .82rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>Day 08 Lab — Hướng dẫn từng bước</h1>
+    <p>Cho người non-tech · Windows · tick từng ô · copy lệnh · nhìn ảnh rồi làm y vậy</p>
+    <div class="progress-row">
+      <span id="progText">19% (9/47)</span>
+      <div class="progress"><span id="progBar" style="width: 19%;"></span></div>
+    </div>
+    <nav class="toc" id="nav">
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#bat-dau">Bắt đầu</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#part0">P0 Cài đặt</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#may-ban">Trên máy</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#colab">Colab → máy</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#giai-nen">Giải nén</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#part1">P1 Gold</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#part2">P2 Model</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#part3">P3 Ngưỡng</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#part4">P4 Review</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#part5">P5 Mask</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#part6">P6 Nộp</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#checklist">Checklist</a>
+      <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#loi">Lỗi hay gặp</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero" id="bat-dau">
+    <p class="eyebrow">VinUni · AI thực chiến · Day 08</p>
+    <h2>Làm bài AI hỗ trợ gán nhãn — như có người ngồi cạnh chỉ</h2>
+    <p>Bạn không cần biết lập trình. Mở file này cạnh màn hình làm bài, tick từng bước, copy lệnh, nhìn ảnh mẫu rồi làm y như vậy trong CVAT.</p>
+    <div class="chips">
+      <span class="chip">~4 giờ trên lớp</span>
+      <span class="chip">36 ảnh đường phố châu Á</span>
+      <span class="chip">CVAT + YOLO26 + YOLOE + SAM</span>
+      <span class="chip">Repo: K5-L2-DAY08-...</span>
+    </div>
+    <div class="toolbar">
+      <button class="btn ghost" type="button" id="resetChk">Xóa tick checklist</button>
+      <a class="btn" href="https://wuongg.github.io/K5-L2-Day08-HuongDan/docs/setup_wizard.html">Mở wizard cài đặt</a>
+      <a class="btn" href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#may-ban">Việc trên máy bạn</a>
+      <a class="btn" href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#colab" style="background:#c45c12">Colab trả gì về máy?</a>
+    </div>
+  </section>
+
+  <div class="card">
+    <h3 style="margin:0 0 8px;font-size:1rem">Ý tưởng bài lab (30 giây)</h3>
+    <p style="margin:0;color:var(--muted)">
+      Máy vẽ khung sẵn → bạn sửa → bạn đo xem mình có bị “tin máy quá” không.
+      Có <b>4 ảnh gold</b> bạn gán tay trước, <b>24 ảnh batch</b> để duyệt, và <b>12 lỗi bẫy</b> trộn kín.
+    </p>
+    <figure class="fig" style="margin-top:12px">
+      <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/roadmap.png" alt="Lộ trình 7 part">
+      <figcaption><b>Lộ trình:</b> Part 1 → 6. Đừng nhảy cóc — gold phải làm trước khi xem nhãn máy.</figcaption>
+    </figure>
+  </div>
+
+  <!-- PART 0 -->
+  <section class="section" id="part0">
+    <h2>Part 0 — Cài đặt trước buổi học <span class="badge">~45 phút</span></h2>
+    <p class="lede">Làm ở nhà. Đừng để việc tải model chiếm giờ học.</p>
+
+    <div class="card step done" data-chk="p0-1">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>0.1 Fork repo &amp; đặt tên đúng</h3>
+        <p class="meta">Trên GitHub → Fork → đổi tên theo mẫu lớp L2</p>
+        <ul>
+          <li>Mẫu: <code class="i">K5-L2-DAY08-[MSHV]-[HoTen]-AIPrelabel</code></li>
+          <li>Ví dụ: <code class="i">K5-L2-DAY08-22001234-NguyenVanA-AIPrelabel</code></li>
+          <li>Họ tên <b>không dấu</b>, viết liền. Repo phải <b>public</b>.</li>
+          <li>Clone về máy (hoặc dùng thư mục này nếu đã là fork của bạn).</li>
+        </ul>
+        <div class="callout note"><span class="tag">Ghi</span><div>Điền ngay <code class="i">STUDENT.md</code>: họ tên, MSHV, GitHub, máy (Windows / có GPU không).</div></div>
+      </div>
+    </div>
+
+    <div class="card step done" data-chk="p0-2">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>0.2 Chọn đường: máy mạnh hay Colab?</h3>
+        <p class="meta">Hầu hết máy học viên nên dùng Colab cho phần chạy AI</p>
+        <table>
+          <thead><tr><th>Máy của bạn</th><th>Nên làm gì</th></tr></thead>
+          <tbody>
+            <tr><td>GPU NVIDIA / RAM ≥ 16 GB, chạy model ổn</td><td>Cài local (bước 0.3–0.4 bên dưới)</td></tr>
+            <tr><td>Máy yếu / không GPU / RAM ≤ 8 GB / chạy chậm</td><td><b>Đi mục Colab</b> → chỉ cài nhẹ trên máy + Docker/CVAT</td></tr>
+          </tbody>
+        </table>
+        <div class="callout warn"><span class="tag">Khuyến nghị</span>
+          <div>Không chắc máy mình mạnh → chọn <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#colab"><b>Colab</b></a>.
+          Trên máy bạn <b>không cần</b> tải model nặng; chỉ cần CVAT + script đo nhẹ.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card step done" data-chk="p0-3">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>0.3 Cài Python trên máy bạn</h3>
+        <p class="meta">Cần Python 3.10–3.13 (khuyến nghị 3.12) và Git</p>
+        <p style="margin:0;color:var(--muted)"><b>Nếu dùng Colab:</b> chỉ cài bản nhẹ (không torch):</p>
+        <div class="codebox">
+          <div class="bar"><span>Colab path · PowerShell</span><button class="copy" type="button">Copy</button></div>
+<pre>cd "C:\Users\phamv\Downloads\K5-L23-Day08-AI-Assisted-Labeling"
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -U pip
+pip install -r requirements-local.txt
+python scripts/check_env.py</pre>
+        </div>
+        <p style="margin:0;color:var(--muted)"><b>Nếu chạy model ngay trên máy:</b> cài đầy đủ:</p>
+        <div class="codebox">
+          <div class="bar"><span>Local full · PowerShell</span><button class="copy" type="button">Copy</button></div>
+<pre>cd "C:\Users\phamv\Downloads\K5-L23-Day08-AI-Assisted-Labeling"
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -U pip
+pip install -r requirements.txt</pre>
+        </div>
+        <div class="callout warn"><span class="tag">Lỗi</span>
+          <div>Nếu PowerShell chặn Activate: chạy <code class="i">Set-ExecutionPolicy -Scope Process Bypass</code> rồi Activate lại.
+          Colab path: <code class="i">check_env.py</code> báo FAIL torch/ultralytics là <b>bình thường</b>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card step done" data-chk="p0-4">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>0.4 (Chỉ khi chạy local) Tải 3 model + kiểm tra</h3>
+        <p class="meta">Dùng Colab → bỏ qua bước này, model tải trong notebook</p>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell · local only</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/download_models.py --set core
+python scripts/check_env.py</pre>
+        </div>
+        <div class="callout ok"><span class="tag">Kỳ vọng</span><div>Local: in <b>SẴN SÀNG</b>. Colab: bỏ qua, sang mục <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#colab">Colab</a>.</div></div>
+      </div>
+    </div>
+
+    <div class="card step done" data-chk="p0-5">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>0.5 Cài Docker + chạy CVAT trên máy</h3>
+        <p class="meta">CVAT = phần mềm vẽ khung trên ảnh. Lab dùng bản Docker local.</p>
+        <ol>
+          <li>Cài <b>Docker Desktop</b> (Windows), bật WSL2 engine, khởi động lại nếu được hỏi.</li>
+          <li>Mở PowerShell / Git Bash và chạy:</li>
+        </ol>
+        <div class="codebox">
+          <div class="bar"><span>cài CVAT v2.81.0</span><button class="copy" type="button">Copy</button></div>
+<pre>git clone https://github.com/cvat-ai/cvat
+cd cvat
+git checkout v2.81.0
+docker compose up -d
+docker exec -it cvat_server bash -ic "python3 ~/manage.py createsuperuser"</pre>
+        </div>
+        <ul>
+          <li>Tạo user/password khi được hỏi.</li>
+          <li>Mở trình duyệt: <a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080</a> → đăng nhập.</li>
+          <li>Lần đầu tải image Docker có thể 10–20 phút.</li>
+        </ul>
+        <div class="callout note"><span class="tag">RAM 8GB</span>
+          <div>Chỉ bật CVAT khi đang gán/duyệt. Model chạy trên Colab. Đóng tab thừa.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card step done" data-chk="p0-6">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>0.6 Tạo Project CVAT + dán 8 nhãn</h3>
+        <p class="meta">Trong repo (venv đã bật): sinh file nhãn, rồi dán vào CVAT</p>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell · gốc repo</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/make_cvat_labels.py</pre>
+        </div>
+        <ol>
+          <li>CVAT → <b>Projects → Create new project</b></li>
+          <li>Name: <code class="i">day08-&lt;MSHV&gt;</code> (ví dụ <code class="i">day08-22001234</code>)</li>
+          <li>Labels → tab <b>Raw</b> → mở <code class="i">cvat/labels_generated.json</code> → Ctrl+A, Ctrl+C → dán vào ô Raw</li>
+          <li>Bấm <b>Save</b> (nhãn) → rồi <b>Submit &amp; Open</b></li>
+          <li>Kiểm đủ 8 nhãn: person, bicycle, motorbike, car, bus, truck, three_wheeler, ignore_region</li>
+        </ol>
+        <figure class="fig">
+          <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/01_cvat_project_labels_saved.png" alt="Create project CVAT tab Raw">
+          <figcaption><b>Ảnh thật:</b> tạo project, tab Raw, dán JSON nhãn, Save, rồi Submit &amp; Open.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/01b_cvat_project_created.png" alt="Project CVAT đã tạo">
+          <figcaption><b>Sau Submit:</b> vào trang Project. Tiếp theo tạo Task từ thư mục ảnh.</figcaption>
+        </figure>
+        <div class="callout note"><span class="tag">Đọc</span>
+          <div>Lướt 1 lần <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/guideline/guideline_v1.0_label_contract.md">label contract v1.0</a>
+          (tuk-tuk = <code class="i">three_wheeler</code>; người trên xe = box person riêng; vật &lt; 20px → ignore).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRÊN MÁY BẠN -->
+  <section class="section" id="may-ban">
+    <h2>Làm trên máy bạn (Windows) <span class="badge">bắt buộc — kể cả khi dùng Colab</span></h2>
+    <p class="lede">
+      Dù AI chạy trên Colab hay trên máy, <b>hầu hết bài vẫn làm trên laptop của bạn</b>.
+      Colab chỉ mượn GPU để chạy model; không thay được CVAT / review / git / nộp bài.
+    </p>
+
+    <div class="card">
+      <h3 style="margin:0 0 8px;font-size:1rem">Hai kiểu máy — cùng một phần “trên máy”</h3>
+      <table>
+        <thead><tr><th></th><th>Máy yếu + Colab</th><th>Máy mạnh (local)</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Trên máy bạn</b></td>
+            <td>CVAT, gold, review, đo, REPORT, git</td>
+            <td>Giống bên trái <b>+</b> chạy luôn lệnh model</td>
+          </tr>
+          <tr>
+            <td><b>Chạy model</b></td>
+            <td>Google Colab (ô notebook)</td>
+            <td>PowerShell trong repo (lệnh Part 2–5)</td>
+          </tr>
+          <tr>
+            <td><b>Cài Python</b></td>
+            <td><code class="i">requirements-local.txt</code> (nhẹ)</td>
+            <td><code class="i">requirements.txt</code> + tải model</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card step done" data-chk="m1">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>M1. Phần mềm phải có trên máy</h3>
+        <ul>
+          <li><b>Git</b> + tài khoản GitHub (fork / clone / commit / push)</li>
+          <li><b>Python 3.10–3.13</b> + venv (script đo, validate, QC…)</li>
+          <li><b>Docker Desktop</b> + <b>CVAT</b> tại <a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080</a></li>
+          <li>Trình duyệt (Chrome/Edge) để mở CVAT và file hướng dẫn này</li>
+          <li>Notepad / VS Code để sửa CSV và REPORT (UTF-8)</li>
+        </ul>
+        <div class="callout note"><span class="tag">Colab</span>
+          <div>Dùng Colab vẫn phải cài đủ danh sách trên. Colab <b>không</b> thay Docker/CVAT.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card step done" data-chk="m2">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>M2. Việc CHỈ làm trên máy (không có trên Colab)</h3>
+        <ol>
+          <li><b>Part 0:</b> fork repo, Docker, tạo Project CVAT, dán 8 nhãn</li>
+          <li><b>Part 1:</b> Task <code class="i">gold-manual</code> → gán tay 4 ảnh → export <code class="i">gold_manual.json</code> → <code class="i">time_log</code></li>
+          <li><b>Part 2 (viết):</b> mở/ghi <code class="i">submission/model_log.csv</code> bằng nhận xét của bạn</li>
+          <li><b>Part 3 (đo):</b> chạy <code class="i">threshold_sweep.py</code> (sau khi đã có file pred + gold trên máy)</li>
+          <li><b>Part 4:</b> <code class="i">inject_traps.py</code> → Upload vào CVAT → review 24 ảnh → export → <code class="i">review_stats.py</code></li>
+          <li><b>Part 6:</b> calibration, QC, REPORT, STUDENT, <code class="i">check_submission.py</code>, git push, nộp LMS</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="m3">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>M3. Thư mục làm việc trên máy = gốc repo</h3>
+        <p class="meta">Mọi lệnh PowerShell và mọi file nộp đều quanh đây</p>
+        <div class="codebox">
+          <div class="bar"><span>mở PowerShell tại đây</span><button class="copy" type="button">Copy</button></div>
+<pre>cd "C:\Users\phamv\Downloads\K5-L23-Day08-AI-Assisted-Labeling"
+.\.venv\Scripts\Activate.ps1</pre>
+        </div>
+        <ul>
+          <li><code class="i">submission/</code> — mọi thứ nộp bài nằm đây</li>
+          <li><code class="i">work/</code> — file tạm (prelabel, tasks CVAT) — <b>không commit</b></li>
+          <li><code class="i">scripts/</code> — lệnh python bạn copy-paste</li>
+          <li>Nếu dùng Colab: giải nén zip <b>vào đúng thư mục này</b> để <code class="i">work/prelabel/...</code> xuất hiện cạnh <code class="i">scripts/</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="m4">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>M4. Một ngày làm bài nhìn từ máy bạn</h3>
+        <ol>
+          <li>Bật Docker → mở CVAT <code class="i">localhost:8080</code></li>
+          <li>PowerShell → Activate <code class="i">.venv</code> → đứng ở gốc repo</li>
+          <li>Làm Part 1 (gold) trên CVAT</li>
+          <li>Máy yếu: sang tab trình duyệt Colab chạy model → tải zip về → giải nén vào gốc repo<br>
+              Máy mạnh: chạy lệnh Part 2–3 ngay trong PowerShell</li>
+          <li>Trên máy: threshold → inject_traps → CVAT review → review_stats</li>
+          <li>Mask (Colab hoặc máy) → file vào <code class="i">submission/masks/</code></li>
+          <li>Trên máy: Part 6 + <code class="i">check_submission.py</code> + push + nộp link</li>
+        </ol>
+        <div class="callout ok"><span class="tag">Nhớ</span>
+          <div>Commit / push / nộp LMS <b>luôn từ máy bạn</b>. Colab không nộp bài hộ bạn.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="callout warn">
+        <span class="tag">1 câu</span>
+        <div>
+          <b>Máy bạn = chỗ làm bài thật</b> (CVAT + đo + viết + git).
+          <b>Colab = thuê GPU</b> chạy model rồi gửi file zip về máy.
+          Chi tiết thuê GPU → <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#colab">mục Colab</a>. Chi tiết từng Part → P1…P6 bên dưới.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLAB → MÁY -->
+  <section class="section" id="colab">
+    <h2>Colab chạy xong trả gì về? Rồi làm gì tiếp? <span class="badge">đọc kỹ mục này</span></h2>
+    <p class="lede">
+      Nghĩ đơn giản: <b>Colab = thuê máy mạnh vẽ khung sẵn</b>. Nó không nộp bài giúp bạn.
+      Nó chỉ gửi về máy bạn vài file trong file nén <code class="i">.zip</code>. Bạn giải nén vào repo, rồi tiếp tục bằng CVAT / PowerShell trên máy.
+    </p>
+
+    <div class="card">
+      <h3 style="margin:0 0 10px;font-size:1rem">Hình dung 1 câu</h3>
+      <ol>
+        <li><b>Máy bạn</b> gán tay 4 ảnh gold (CVAT) — không cần Colab.</li>
+        <li><b>Colab</b> chạy AI → tạo file nhãn máy (<code class="i">pre.coco.json</code>, ảnh viz, mask…).</li>
+        <li>Colab <b>đóng gói zip</b> → bạn tải về laptop.</li>
+        <li>Bạn <b>giải nén vào thư mục repo</b> → trên máy đo ngưỡng, cài bẫy, mở CVAT sửa, viết báo cáo, nộp.</li>
+      </ol>
+      <div class="callout ok" style="margin-top:10px"><span class="tag">Không phải</span>
+        <div>Colab xong là xong bài. <b>Zip về mới là nguyên liệu</b>; phần chấm điểm (review, bẫy, REPORT) vẫn trên máy bạn.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 8px;font-size:1rem">Colab trả về đúng 2 gói zip</h3>
+      <table>
+        <thead><tr><th>Gói zip</th><th>Khi nào tải</th><th>Bên trong có gì (quan trọng)</th><th>Về máy xong làm gì tiếp</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><code class="i">colab_stage1.zip</code></td>
+            <td>Sau ô 4–5 (đã chạy mọi ảnh)</td>
+            <td>
+              <code class="i">work/prelabel/y26_all/pre.coco.json</code><br>
+              <code class="i">work/prelabel/yoloe_all/pre.coco.json</code><br>
+              <code class="i">work/runs.csv</code>
+            </td>
+            <td>
+              1) Ghi <code class="i">model_log.csv</code><br>
+              2) Chạy <code class="i">threshold_sweep.py</code> (cần gold rồi)<br>
+              3) Chọn chuỗi ngưỡng <code class="i">--thr "..."</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code class="i">colab_outputs.zip</code></td>
+            <td>Sau ô 8 (cuối notebook)</td>
+            <td>
+              Thêm <code class="i">work/prelabel/...</code> (merge nếu có)<br>
+              + <code class="i">submission/masks/*.jpg</code> (nếu đã làm ô 7)
+            </td>
+            <td>
+              1) <code class="i">inject_traps.py</code> trên máy<br>
+              2) Nạp CVAT → review 24 ảnh<br>
+              3) Part 6 QC + REPORT + nộp
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout bad" style="margin-top:10px"><span class="tag">Mất file</span>
+        <div>Colab tắt / hết phiên = mất hết trên mây. <b>Tải zip ngay</b> khi ô tạo zip chạy xong — đừng để cuối buổi mới tải.</div>
+      </div>
+    </div>
+
+    <!-- CHUYẾN 0 -->
+    <div class="card step" data-chk="c0">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>Bước 0 — Trên máy trước khi đụng Colab</h3>
+        <ol>
+          <li>Fork + clone repo, điền STUDENT.md (Part 0.1)</li>
+          <li>Cài nhẹ: <code class="i">pip install -r requirements-local.txt</code></li>
+          <li>Cài Docker + CVAT, tạo Project, dán 8 nhãn</li>
+          <li><b>Part 1:</b> gán tay 4 ảnh gold → export thành
+            <code class="i">submission/labels/gold_manual.json</code></li>
+        </ol>
+        <div class="callout note"><span class="tag">Vì sao</span>
+          <div>Gold phải có trên máy trước khi chạy đo ngưỡng. Colab không gán gold giúp bạn.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHUYẾN 1 -->
+    <div class="card step" data-chk="c1">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>Bước 1 — Mở Colab, bật GPU, chạy ô 0 → 5</h3>
+        <p style="margin:0">
+          <a class="btn" href="https://colab.research.google.com/github/VinUni-AI20k/K5-L23-Day08-AI-Assisted-Labeling/blob/main/notebooks/day08_colab.ipynb" target="_blank" rel="noopener">Mở day08_colab.ipynb trên Colab</a>
+        </p>
+        <ol>
+          <li><b>Runtime → Change runtime type → T4 GPU → Save</b></li>
+          <li>Chạy lần lượt ô 0, 1, 2 (clone + cài + tải model) — chờ xong</li>
+          <li>Ô 3: chạy thử 3 model trên ảnh pilot — <b>nhìn ảnh viz</b> hiện trong notebook</li>
+          <li>Ô 4–5: chạy mọi ảnh → notebook tự tạo và tải <code class="i">colab_stage1.zip</code></li>
+        </ol>
+        <div class="callout warn"><span class="tag">Colab trả về</span>
+          <div>File <b>colab_stage1.zip</b> trên Downloads.
+          Bên trong = nhãn máy YOLO26 + YOLOE cho cả bộ ảnh (file <code class="i">pre.coco.json</code>).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="giai-nen">
+      <h3 style="margin:0 0 8px;font-size:1.05rem">Giải nén ở đâu? Cấu trúc thế nào? (đọc trước khi tải zip)</h3>
+      <p style="margin:0 0 10px;color:var(--muted)">
+        Zip từ Colab <b>không tạo project mới</b>. Nó chỉ <b>đổ thêm thư mục</b>
+        <code class="i">work/</code> (và sau này <code class="i">submission/masks/</code>)
+        vào đúng chỗ repo bạn đang làm bài.
+      </p>
+
+      <h3 style="margin:12px 0 6px;font-size:.95rem">1) Thư mục đích = gốc repo (đường dẫn thật trên máy bạn)</h3>
+      <div class="codebox">
+        <div class="bar"><span>đây là “nhà” — giải nén VÀO đây</span><button class="copy" type="button">Copy</button></div>
+<pre>C:\Users\phamv\Downloads\K5-L23-Day08-AI-Assisted-Labeling\</pre>
+      </div>
+      <p style="margin:8px 0 0;color:var(--muted)">
+        Nhận biết đúng thư mục: mở lên phải <b>nhìn thấy cùng lúc</b>
+        <code class="i">scripts</code>, <code class="i">submission</code>, <code class="i">data</code>, <code class="i">GUIDE.md</code>.
+        Đó mới là gốc. Đừng giải nén vào <code class="i">Downloads</code>, vào <code class="i">Desktop</code>,
+        hay vào bên trong <code class="i">submission</code>.
+      </p>
+
+      <h3 style="margin:14px 0 6px;font-size:.95rem">2) Trước khi giải nén — cấu trúc gốc (rút gọn)</h3>
+      <div class="codebox">
+        <div class="bar"><span>cây thư mục · trước khi có file Colab</span><button class="copy" type="button">Copy</button></div>
+<pre>K5-L23-Day08-AI-Assisted-Labeling\          ← GỐC REPO (giải nén vào đây)
+├── scripts\          ← lệnh python
+├── submission\       ← chỗ nộp bài (labels, qc, REPORT…)
+├── data\             ← ảnh lab
+├── docs\
+├── notebooks\        ← day08_colab.ipynb
+├── cvat\
+├── guideline\
+├── GUIDE.md
+├── STUDENT.md
+└── HUONG_DAN_CHI_TIET.html
+    (chưa có work\ cũng bình thường)</pre>
+      </div>
+
+      <h3 style="margin:14px 0 6px;font-size:.95rem">3) Cách giải nén trên Windows (chuột phải — dễ nhất)</h3>
+      <ol>
+        <li>Vào <code class="i">Downloads</code>, tìm <code class="i">colab_stage1.zip</code> (hoặc <code class="i">colab_outputs.zip</code>)</li>
+        <li>Chuột phải zip → <b>Extract All…</b> / <b>Giải nén tất cả…</b></li>
+        <li>Ô “Destination” / “Đích”: bấm Browse → chọn đúng thư mục gốc ở mục (1) ở trên</li>
+        <li>Nhìn kỹ đường dẫn đích phải kết thúc bằng
+          <code class="i">...\K5-L23-Day08-AI-Assisted-Labeling</code>
+          — <b>không</b> thêm folder tên zip phía sau</li>
+        <li>Bỏ tick “Show extracted files” nếu muốn → <b>Extract</b></li>
+      </ol>
+      <div class="callout warn"><span class="tag">Windows hay sai</span>
+        <div>Nếu bấm Extract All rồi Enter luôn, Windows hay tạo
+        <code class="i">...\K5-L23-...\colab_stage1\work\</code> (thừa 1 tầng).
+        Phải sửa đích về đúng gốc repo, hoặc sau đó cắt thư mục <code class="i">work</code> kéo lên cạnh <code class="i">scripts</code>.</div>
+      </div>
+
+      <h3 style="margin:14px 0 6px;font-size:.95rem">4) Hoặc PowerShell (không tạo tầng thừa)</h3>
+      <div class="codebox">
+        <div class="bar"><span>stage1 · giải nén đúng gốc</span><button class="copy" type="button">Copy</button></div>
+<pre>cd "C:\Users\phamv\Downloads\K5-L23-Day08-AI-Assisted-Labeling"
+Expand-Archive -Path "$env:USERPROFILE\Downloads\colab_stage1.zip" -DestinationPath . -Force</pre>
+      </div>
+      <div class="codebox" style="margin-top:8px">
+        <div class="bar"><span>outputs · lần 2 (sau mask)</span><button class="copy" type="button">Copy</button></div>
+<pre>cd "C:\Users\phamv\Downloads\K5-L23-Day08-AI-Assisted-Labeling"
+Expand-Archive -Path "$env:USERPROFILE\Downloads\colab_outputs.zip" -DestinationPath . -Force</pre>
+      </div>
+      <p style="margin:8px 0 0;color:var(--muted)">
+        <code class="i">-DestinationPath .</code> nghĩa là “đổ vào thư mục đang đứng” (= gốc repo sau lệnh <code class="i">cd</code>).
+        <code class="i">-Force</code> = ghi đè file trùng tên (an toàn khi tải lại).
+      </p>
+
+      <h3 style="margin:14px 0 6px;font-size:.95rem">5) Sau khi giải nén <code class="i">colab_stage1.zip</code> — phải thấy thế này</h3>
+      <div class="codebox">
+        <div class="bar"><span>ĐÚNG · work nằm cạnh scripts</span><button class="copy" type="button">Copy</button></div>
+<pre>K5-L23-Day08-AI-Assisted-Labeling\
+├── scripts\
+├── submission\
+├── data\
+├── work\                              ← MỚI CÓ (từ zip)
+│   ├── runs.csv
+│   └── prelabel\
+│       ├── y26_all\
+│       │   └── pre.coco.json          ← nhãn YOLO26 cả bộ ảnh
+│       └── yoloe_all\
+│           └── pre.coco.json          ← nhãn YOLOE (three_wheeler)
+├── GUIDE.md
+└── ...</pre>
+      </div>
+
+      <h3 style="margin:14px 0 6px;font-size:.95rem">6) Sau <code class="i">colab_outputs.zip</code> (ô 8) — thêm mask</h3>
+      <div class="codebox">
+        <div class="bar"><span>ĐÚNG · masks nằm trong submission</span><button class="copy" type="button">Copy</button></div>
+<pre>K5-L23-Day08-AI-Assisted-Labeling\
+├── work\
+│   └── prelabel\          ← có thể đầy hơn (merge, t_y26, t_sam…)
+├── submission\
+│   ├── labels\            ← gold / batch của bạn (làm trên máy)
+│   ├── masks\             ← MỚI / CẬP NHẬT từ zip
+│   │   ├── tuktuk_img013.jpg
+│   │   └── ... (≥ 3 ảnh)
+│   ├── model_log.csv
+│   └── REPORT.md
+└── ...</pre>
+      </div>
+
+      <h3 style="margin:14px 0 6px;font-size:.95rem">7) Sai cấu trúc trông thế nào (đừng để vậy)</h3>
+      <div class="codebox">
+        <div class="bar"><span>SAI · thừa 1 tầng tên zip</span><button class="copy" type="button">Copy</button></div>
+<pre>K5-L23-Day08-AI-Assisted-Labeling\
+├── scripts\
+├── colab_stage1\          ← SAI: tầng thừa
+│   └── work\
+│       └── prelabel\...
+└── ...</pre>
+      </div>
+      <div class="callout bad" style="margin-top:8px"><span class="tag">Hậu quả</span>
+        <div>Lệnh <code class="i">threshold_sweep.py</code> / <code class="i">merge_prelabels.py</code> báo không tìm thấy file
+        vì chúng tìm <code class="i">work\prelabel\...</code> cạnh <code class="i">scripts</code>, không tìm trong
+        <code class="i">colab_stage1\work\...</code>.</div>
+      </div>
+      <p style="margin:8px 0 0;color:var(--muted)"><b>Cách chữa nhanh:</b> cắt thư mục
+        <code class="i">colab_stage1\work</code> → dán thẳng vào gốc repo (cạnh <code class="i">scripts</code>),
+        rồi xóa folder <code class="i">colab_stage1</code> rỗng.</p>
+
+      <h3 style="margin:14px 0 6px;font-size:.95rem">8) Kiểm tra nhanh bằng PowerShell</h3>
+      <div class="codebox">
+        <div class="bar"><span>phải in True / True</span><button class="copy" type="button">Copy</button></div>
+<pre>cd "C:\Users\phamv\Downloads\K5-L23-Day08-AI-Assisted-Labeling"
+Test-Path .\work\prelabel\y26_all\pre.coco.json
+Test-Path .\work\prelabel\yoloe_all\pre.coco.json
+# sau outputs.zip / ô 7:
+Test-Path .\submission\masks</pre>
+      </div>
+    </div>
+
+    <div class="card step done" data-chk="c2">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>Bước 2 — Thực hiện giải nén lần 1 (stage1)</h3>
+        <p class="meta">Làm đúng mục “Giải nén ở đâu?” phía trên, rồi tick ô này</p>
+        <ol>
+          <li>Tải xong <code class="i">colab_stage1.zip</code> từ Colab (ô 5)</li>
+          <li>Giải nén vào
+            <code class="i">C:\Users\phamv\Downloads\K5-L23-Day08-AI-Assisted-Labeling\</code></li>
+          <li>Chạy 2 lệnh <code class="i">Test-Path</code> ở mục 8 — cả hai phải <b>True</b></li>
+          <li>Mở File Explorer: thấy <code class="i">work</code> nằm <b>cùng cấp</b> với <code class="i">scripts</code></li>
+        </ol>
+        <div class="callout ok"><span class="tag">Xong bước này</span>
+          <div>Máy bạn đã có “nhãn thô” từ Colab. Sang Bước 3: viết log + chạy ngưỡng.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="c3">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>Bước 3 — Trên máy: viết log + chọn ngưỡng (dùng file vừa nhận)</h3>
+        <p class="meta">Đây là lúc “file từ Colab” bắt đầu được dùng</p>
+        <ol>
+          <li>Mở Notepad → điền <code class="i">submission/model_log.csv</code> (≥ 4 dòng, có SAM).
+            Ghi chú: <code class="i">device = cuda (Colab T4)</code>. Nhìn lại ảnh viz trên Colab / trong zip nếu có.</li>
+          <li>Chạy đo ngưỡng (cần đã có <code class="i">gold_manual.json</code>):</li>
+        </ol>
+        <div class="codebox">
+          <div class="bar"><span>trên máy · dùng file Colab vừa giải nén</span><button class="copy" type="button">Copy</button></div>
+<pre>.\.venv\Scripts\Activate.ps1
+python scripts/threshold_sweep.py --pred work/prelabel/y26_all/pre.coco.json work/prelabel/yoloe_all/pre.coco.json --gold submission/labels/gold_manual.json</pre>
+        </div>
+        <ol start="3">
+          <li>Mở <code class="i">submission/qc/threshold_sweep.md</code> → <b>chép chuỗi ngưỡng</b> kiểu
+            <code class="i">person=0.35,motorbike=0.5,...</code> (sẽ dán vào bước sau)</li>
+        </ol>
+        <div class="callout ok"><span class="tag">Hiểu</span>
+          <div>Colab đưa “nhãn thô”. Máy bạn so với gold → chọn ngưỡng nào giữ / bỏ box máy.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHUYẾN 2 -->
+    <div class="card step" data-chk="c4">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>Bước 4 — Gộp nhãn + cài bẫy (trên máy; Colab ô 6 tuỳ chọn)</h3>
+        <p class="meta">Cách đơn giản nhất cho non-tech: làm hết trên máy sau khi đã có stage1</p>
+        <ol>
+          <li>Trên máy, gộp pre-label (thay chuỗi thr bằng của bạn):</li>
+        </ol>
+        <div class="codebox">
+          <div class="bar"><span>trên máy</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/merge_prelabels.py work/prelabel/yoloe_all/pre.coco.json work/prelabel/y26_all/pre.coco.json --thr "person=0.35,motorbike=0.5,car=0.35,three_wheeler=0.4" --conf 0.3 --iou 0.6 --split "batch,gold" --out work/prelabel/merged_review/pre.coco.json</pre>
+        </div>
+        <ol start="2">
+          <li>Cài 12 bẫy (đổi MSHV):</li>
+        </ol>
+        <div class="codebox">
+          <div class="bar"><span>trên máy · đừng mở traps_key</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/inject_traps.py --pre work/prelabel/merged_review/pre.coco.json --student "22001234"</pre>
+        </div>
+        <p style="margin:0;color:var(--muted)">
+          Ra file trong <code class="i">submission/prelabel/</code>:
+          <code class="i">pre_traps_import.coco.json</code> (nạp CVAT),
+          <code class="i">pre_traps.coco.json</code> (để đo),
+          <code class="i">traps_key.json</code> (đáp án — <b>đóng lại, đừng mở</b>).
+        </p>
+        <div class="callout note"><span class="tag">Colab ô 6?</span>
+          <div>Có thể merge trên Colab rồi tải lại trong outputs.zip — không bắt buộc.
+          Non-tech nên merge + inject trên máy như trên cho dễ kiểm soát.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="c5">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>Bước 5 — Trên máy: nạp file vào CVAT và review (dùng hàng Colab đã lọc)</h3>
+        <ol>
+          <li>CVAT → Task <code class="i">batch-review</code> (24 ảnh từ <code class="i">work/tasks/review/</code>)</li>
+          <li>⋮ Upload annotations → COCO 1.0 → chọn
+            <code class="i">submission/prelabel/pre_traps_import.coco.json</code></li>
+          <li>Mở Job: sẽ thấy <b>khung máy sẵn</b> (đó chính là “đồ Colab mang về” sau khi lọc ngưỡng + bẫy)</li>
+          <li>Bạn sửa / xóa / thêm theo checklist → export
+            <code class="i">submission/labels/batch_reviewed.json</code></li>
+          <li>Chạy <code class="i">review_stats.py</code> trên máy → viết REPORT mục 2–4</li>
+        </ol>
+        <div class="callout ok"><span class="tag">Mấu chốt</span>
+          <div>Colab vẽ sẵn. CVAT trên máy = chỗ bạn <b>kiểm và sửa</b>. Không Accept hàng loạt.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHUYẾN 3 -->
+    <div class="card step" data-chk="c6">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>Bước 6 — Quay Colab làm mask (ô 7–8) → giải nén lần 2</h3>
+        <ol>
+          <li>Colab: ô 7 (SAM 3 vật) → ô 8 → tải <code class="i">colab_outputs.zip</code></li>
+          <li>Giải nén <b>cùng chỗ</b> với lần 1: gốc repo
+            <code class="i">C:\Users\phamv\Downloads\K5-L23-Day08-AI-Assisted-Labeling\</code>
+            (xem lại mục <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#giai-nen">Giải nén ở đâu?</a> — cấu trúc mục 6)</li>
+          <li>Kiểm: File Explorer mở <code class="i">submission\masks\</code> phải có ≥ 3 ảnh <code class="i">.jpg</code></li>
+          <li>Hoặc: <code class="i">Test-Path .\submission\masks</code> → True; đếm file trong masks</li>
+        </ol>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell</span><button class="copy" type="button">Copy</button></div>
+<pre>cd "C:\Users\phamv\Downloads\K5-L23-Day08-AI-Assisted-Labeling"
+Expand-Archive -Path "$env:USERPROFILE\Downloads\colab_outputs.zip" -DestinationPath . -Force
+Get-ChildItem .\submission\masks</pre>
+        </div>
+        <div class="callout warn"><span class="tag">Colab trả về</span>
+          <div>Zip này đổ đè/bổ sung vào <code class="i">work\prelabel\</code> và thêm
+          <code class="i">submission\masks\</code>. Không xóa <code class="i">submission\labels\</code> của bạn.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="c7">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>Bước 7 — Trên máy: Part 6 + nộp (Colab xong việc)</h3>
+        <ol>
+          <li>Calibration + guideline v1.1</li>
+          <li><code class="i">build_release.py</code> → QC → REPORT 8 mục → STUDENT.md</li>
+          <li><code class="i">python scripts/check_submission.py</code></li>
+          <li>git push → nộp link LMS</li>
+        </ol>
+        <div class="callout ok"><span class="tag">Xong vòng Colab</span>
+          <div>Từ đây không cần Colab nữa. Mọi file nộp đã nằm trong <code class="i">submission/</code> trên máy bạn.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 8px;font-size:1rem">Tóm tắt đường đi file (đọc 20 giây)</h3>
+      <table>
+        <thead><tr><th>Thứ tự</th><th>Ở đâu</th><th>Ra / nhận gì</th><th>Làm gì ngay sau đó</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Máy</td><td>Tạo gold_manual.json</td><td>Sang Colab</td></tr>
+          <tr><td>2</td><td>Colab ô 0–5</td><td>Tạo nhãn máy → <b>colab_stage1.zip</b></td><td>Tải về</td></tr>
+          <tr><td>3</td><td>Máy</td><td>Giải nén → có pre.coco.json</td><td>model_log + threshold_sweep</td></tr>
+          <tr><td>4</td><td>Máy</td><td>merge + inject_traps</td><td>Nạp CVAT, review</td></tr>
+          <tr><td>5</td><td>Colab ô 7–8</td><td><b>colab_outputs.zip</b> (+ masks)</td><td>Giải nén vào repo</td></tr>
+          <tr><td>6</td><td>Máy</td><td>QC + REPORT</td><td>check_submission → nộp</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PART 1 -->
+  <section class="section" id="part1">
+    <h2>Part 1 — Gán tay 4 ảnh gold <span class="badge">25 phút · không AI</span></h2>
+    <p class="lede">Gold là đáp án chuẩn do bạn vẽ. Nếu xem nhãn máy trước rồi mới vẽ, bài đo sẽ thiên lệch.</p>
+    <div class="callout note" style="margin-bottom:10px"><span class="tag">Colab</span>
+      <div>Part 1 <b>không</b> dùng Colab. Gán tay trên CVAT máy bạn.</div>
+    </div>
+
+    <div class="card step" data-chk="p1-1">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>1.1 Chuẩn bị thư mục Task</h3>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/prepare_workdirs.py</pre>
+        </div>
+        <div class="callout ok"><span class="tag">Kỳ vọng</span>
+          <div>Có <code class="i">work/tasks/gold/</code> (4 ảnh) và <code class="i">work/tasks/review/</code> (24 ảnh).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p1-2">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>1.2 Tạo Task gold-manual trong CVAT</h3>
+        <ol>
+          <li>Trong Project → <b>Create new task</b></li>
+          <li>Tên: <code class="i">gold-manual</code></li>
+          <li>Kéo cả 4 ảnh trong <code class="i">work/tasks/gold/</code> vào → Submit</li>
+          <li>Mở Job → bắt đầu vẽ</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p1-3">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>1.3 Cách vẽ (làm y như ảnh dưới)</h3>
+        <ol>
+          <li>Bên trái chọn công cụ <b>Rectangle</b></li>
+          <li>Chọn đúng lớp (person / car / three_wheeler…)</li>
+          <li>Kéo khung <b>ôm sát</b> phần nhìn thấy của vật</li>
+          <li>Người ngồi trên xe = <b>hai box</b>: người + xe</li>
+          <li>Cụm xe máy rất nhỏ / dày → một vùng <code class="i">ignore_region</code></li>
+          <li>Không chắc quy tắc → tick <code class="i">can_review</code> và ghi chú ảnh đó</li>
+          <li>Bấm <b>Save</b> thường xuyên</li>
+          <li>Bấm giờ 4 ảnh → ghi <code class="i">submission/time_log.csv</code> dòng <code class="i">gold_manual</code></li>
+        </ol>
+        <figure class="fig">
+          <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/02_cvat_gold_manual_workspace.png" alt="Workspace CVAT gold">
+          <figcaption><b>Gold manual:</b> tuk-tuk phải là <code class="i">three_wheeler</code>, không phải car.</figcaption>
+        </figure>
+        <div class="callout bad"><span class="tag">Cấm</span>
+          <div>Không chạy model / không xem pre-label của 4 ảnh gold trước khi gán xong và export.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p1-4">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>1.4 Export COCO → đúng chỗ trong submission</h3>
+        <ol>
+          <li>Task gold-manual → menu ⋮ Actions → Export annotations</li>
+          <li>Format: <b>COCO 1.0</b> · không lưu kèm ảnh</li>
+          <li>Đặt file thành: <code class="i">submission/labels/gold_manual.json</code></li>
+        </ol>
+        <figure class="fig">
+          <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/03_cvat_export_coco_requests.png" alt="Export Requests CVAT">
+          <figcaption><b>Export:</b> theo dõi Requests tới khi file sẵn sàng tải về.</figcaption>
+        </figure>
+        <div class="codebox">
+          <div class="bar"><span>kiểm nhãn</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/validate_labels.py --all</pre>
+        </div>
+        <div class="callout ok"><span class="tag">Commit</span><div>Commit Part 1 ngay (ví dụ: <code class="i">part1: gold manual 4 images</code>).</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART 2 -->
+  <section class="section" id="part2">
+    <h2>Part 2 — Tour 3 model <span class="badge">30 phút</span></h2>
+    <p class="lede">Chạy trên ảnh pilot (không phải gold). Mỗi lần chạy: nhìn <code class="i">viz/</code>, ghi 1 dòng vào <code class="i">model_log.csv</code>.</p>
+    <div class="callout warn" style="margin-bottom:10px"><span class="tag">Colab</span>
+      <div>Máy yếu: chạy <b>ô 3</b> trong notebook (xem <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#colab">mục Colab</a>).
+      Nhìn viz ngay trong Colab, rồi ghi <code class="i">model_log.csv</code> trên máy bạn (ghi <code class="i">device = cuda (Colab T4)</code>).
+      Các lệnh PowerShell bên dưới chỉ dùng khi chạy local.</div>
+    </div>
+
+    <figure class="fig card" style="padding:0;overflow:hidden;box-shadow:none">
+      <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/model_families.png" alt="Ba họ model">
+      <figcaption><b>Ba họ:</b> YOLO26 · YOLOE · SAM.</figcaption>
+    </figure>
+
+    <div class="card step" data-chk="p2-1">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>2.1 YOLO26 — thử 2 ngưỡng</h3>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/prelabel.py --model yolo26 --size m --split pilot --conf 0.25 --out work/prelabel/t_y26
+python scripts/prelabel.py --model yolo26 --size m --split pilot --conf 0.5 --out work/prelabel/t_y26_c05</pre>
+        </div>
+        <p style="margin:0;color:var(--muted)">Mở <code class="i">work/prelabel/t_y26/viz/</code>. Hỏi: tuk-tuk bị gọi là gì?</p>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p2-2">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>2.2 YOLOE — tìm three_wheeler</h3>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/prelabel.py --model yoloe --classes three_wheeler --split pilot --conf 0.25 --out work/prelabel/t_yoloe</pre>
+        </div>
+        <figure class="fig">
+          <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/04_model_tour_yolo26_vs_yoloe_img002.jpg" alt="YOLO26 vs YOLOE">
+          <figcaption><b>So sánh:</b> trái — detector thường bỏ sót tuk-tuk. Phải — YOLOE bắt được.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p2-3">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>2.3 SAM (bắt buộc) — box → mask</h3>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell · một dòng</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/prelabel.py --model yolo26 --size m --classes "person,motorbike,car" --images img_004.jpg img_013.jpg --conf 0.3 --segmenter sam --sam sam2.1_b.pt --out work/prelabel/t_sam</pre>
+        </div>
+        <figure class="fig">
+          <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/05_prelabel_sam_img013.jpg" alt="SAM prelabel">
+          <figcaption><b>SAM:</b> mask bám theo box. Box sai → mask cũng sai.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p2-4">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>2.4 Ghi model_log.csv ≥ 4 dòng</h3>
+        <ul>
+          <li>Mở <code class="i">submission/model_log.csv</code> bằng Notepad / VS Code (UTF-8).</li>
+          <li>Có thể copy dòng mẫu từ <code class="i">work/runs.csv</code>.</li>
+          <li>Cột nhận xét phải viết bằng mắt nhìn <code class="i">viz/</code> — cụ thể ảnh nào, vật nào.</li>
+          <li>Bắt buộc có YOLO26, YOLOE, <b>SAM</b> (ghi <code class="i">sam2.1_b.pt</code>).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p2-5">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>2.5 Chạy mọi ảnh (nguồn Part 3–4)</h3>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/prelabel.py --model yolo26 --size m --split all --conf 0.05 --out work/prelabel/y26_all --no-viz
+python scripts/prelabel.py --model yoloe --classes three_wheeler --split all --conf 0.05 --out work/prelabel/yoloe_all --no-viz</pre>
+        </div>
+        <div class="callout warn"><span class="tag">Máy yếu</span>
+          <div>Copy từ <code class="i">data/cache/</code> vào <code class="i">work/prelabel/y26_all/pre.coco.json</code> và file YOLOE tương ứng. Ghi “dùng cache” trong REPORT. Vẫn phải tự chạy tay vài ảnh Part 2.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART 3 -->
+  <section class="section" id="part3">
+    <h2>Part 3 — Chọn ngưỡng theo lớp <span class="badge">10 phút</span></h2>
+    <p class="lede">Ngưỡng = điểm tin cậy tối thiểu. Cao quá → sót. Thấp quá → thừa rác.</p>
+    <div class="callout warn" style="margin-bottom:10px"><span class="tag">Colab</span>
+      <div>Ô 4–5 trên Colab chạy mọi ảnh rồi tải <code class="i">colab_stage1.zip</code> về.
+      Giải nén vào gốc repo, <b>rồi</b> chạy lệnh <code class="i">threshold_sweep.py</code> dưới đây trên máy bạn (cần có gold rồi).</div>
+    </div>
+
+    <div class="card step" data-chk="p3-1">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>3.1 Chạy threshold sweep</h3>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell · một dòng</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/threshold_sweep.py --pred work/prelabel/y26_all/pre.coco.json work/prelabel/yoloe_all/pre.coco.json --gold submission/labels/gold_manual.json</pre>
+        </div>
+        <figure class="fig">
+          <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/06_threshold_sweep.png" alt="Threshold sweep">
+          <figcaption><b>Đọc biểu đồ:</b> xanh = precision, cam = recall. Vạch đỏ = ngưỡng gợi ý. Lớp ít vật giữ mặc định 0.3 là đúng.</figcaption>
+        </figure>
+        <ul>
+          <li>Mở <code class="i">submission/qc/threshold_sweep.md</code></li>
+          <li>Chép chuỗi kiểu <code class="i">person=0.35,motorbike=0.5,...</code> để dùng Part 4</li>
+          <li>Ghi REPORT mục 1 + nói rõ chỉ 4 ảnh gold nên số đo lạc quan</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART 4 -->
+  <section class="section" id="part4">
+    <h2>Part 4 — Pre-label, bẫy, review 24 ảnh <span class="badge">95 phút · nặng nhất</span></h2>
+    <p class="lede">Phần chiếm điểm nhiều nhất. Đừng mở <code class="i">traps_key.json</code> trước khi export xong.</p>
+    <div class="callout warn" style="margin-bottom:10px"><span class="tag">Colab</span>
+      <div>Merge có thể làm ở ô 6 Colab (dán chuỗi <code class="i">--thr</code> của bạn).
+      <b>inject_traps + CVAT review + review_stats</b> làm trên máy bạn — xem lại <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#colab">C5</a>.</div>
+    </div>
+
+    <figure class="fig card" style="padding:0;overflow:hidden;box-shadow:none">
+      <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/review_checklist.png" alt="Checklist review">
+      <figcaption><b>4 bước:</b> ẩn nhãn → quét ảnh → sót → thừa → sai lớp → box lỏng.</figcaption>
+    </figure>
+
+    <div class="card step" data-chk="p4-1">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>4.1 Gộp pre-label theo ngưỡng của bạn</h3>
+        <p class="meta">Thay chuỗi thr bằng chuỗi bạn chép ở Part 3</p>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell · nhớ ngoặc kép</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/merge_prelabels.py work/prelabel/yoloe_all/pre.coco.json work/prelabel/y26_all/pre.coco.json --thr "person=0.35,motorbike=0.5,car=0.35,three_wheeler=0.4" --conf 0.3 --iou 0.6 --split "batch,gold" --out work/prelabel/merged_review/pre.coco.json</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p4-2">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>4.2 Cài 12 bẫy (hạt giống = MSHV)</h3>
+        <div class="codebox">
+          <div class="bar"><span>đổi 22001234 thành MSHV của bạn</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/inject_traps.py --pre work/prelabel/merged_review/pre.coco.json --student "22001234"</pre>
+        </div>
+        <ul>
+          <li>Ra 3 file trong <code class="i">submission/prelabel/</code>:
+            <code class="i">pre_traps_import.coco.json</code>,
+            <code class="i">pre_traps.coco.json</code>,
+            <code class="i">traps_key.json</code></li>
+          <li><b>Đừng mở</b> traps_key cho tới khi review + export xong</li>
+        </ul>
+        <div class="callout bad"><span class="tag">Luật</span><div>Mở đáp án bẫy sớm = mất điểm phần đo.</div></div>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p4-3">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>4.3 Tạo Task batch-review + Upload annotations</h3>
+        <ol>
+          <li>Task mới tên <code class="i">batch-review</code>, kéo ảnh từ <code class="i">work/tasks/review/</code> (đúng 24 ảnh)</li>
+          <li>Task → ⋮ Actions → <b>Upload annotations</b></li>
+          <li>Format: <b>COCO 1.0</b> · Import mode: <b>Replace</b></li>
+          <li>Chọn <code class="i">submission/prelabel/pre_traps_import.coco.json</code> → OK</li>
+          <li>Mở Job, đếm số box ảnh đầu — phải thấy khung máy sẵn</li>
+        </ol>
+        <figure class="fig">
+          <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/07_cvat_upload_pre_traps_import.png" alt="Upload annotations">
+          <figcaption><b>Upload:</b> COCO 1.0 · Replace · file pre_traps_import.coco.json.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p4-4">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>4.4 Review từng ảnh (~3 phút/ảnh)</h3>
+        <ol>
+          <li><b>Ẩn</b> nhãn máy → nhìn ảnh trước 5–10 giây</li>
+          <li>Bật lại → tìm <b>sót</b> → thêm</li>
+          <li>Xóa box <b>thừa</b></li>
+          <li>Sửa <b>sai lớp</b> (tuk-tuk gắn car → three_wheeler)</li>
+          <li>Siết box <b>lỏng</b></li>
+          <li>Ảnh dày (005, 018, 021, 024, 028, 029): cụm &lt; 20px dùng ignore_region</li>
+          <li>Nghỉ mỗi ~10 ảnh. Bấm giờ → dòng batch_review trong time_log</li>
+        </ol>
+        <figure class="fig">
+          <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/08_cvat_batch_review_job_ui.png" alt="Batch review UI">
+          <figcaption><b>Batch review:</b> đã có box máy (có conf). Bạn sửa, không Accept hàng loạt.</figcaption>
+        </figure>
+        <div class="callout note"><span class="tag">Nhớ</span>
+          <div>Accepted cao mà bắt bẫy thấp = bạn đang bấm Accept chứ chưa kiểm.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p4-5">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>4.5 Export + đo review_stats</h3>
+        <ol>
+          <li>Export COCO → <code class="i">submission/labels/batch_reviewed.json</code></li>
+          <li><b>Lúc này</b> mới được mở traps_key.json</li>
+          <li>Chạy:</li>
+        </ol>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/validate_labels.py --all
+python scripts/review_stats.py --pre submission/prelabel/pre_traps.coco.json --final submission/labels/batch_reviewed.json --gold submission/labels/gold_manual.json --key submission/prelabel/traps_key.json</pre>
+        </div>
+        <ul>
+          <li>Đọc <code class="i">submission/qc/review_stats.md</code></li>
+          <li>Viết REPORT mục 2–4: error profile, bắt bẫy x/12, 3 quy tắc giảm thiên kiến</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART 5 -->
+  <section class="section" id="part5">
+    <h2>Part 5 — Mask SAM cho 3 vật khó <span class="badge">15 phút</span></h2>
+    <p class="lede">Chọn 3 vật khó (tuk-tuk có người, xích lô, vật bị che).</p>
+    <div class="callout warn" style="margin-bottom:10px"><span class="tag">Colab</span>
+      <div>Chạy ô 7 trên Colab (đổi tọa độ click). Sau đó ô 8 tải <code class="i">colab_outputs.zip</code>
+      có thư mục <code class="i">submission/masks/</code> → giải nén vào gốc repo.</div>
+    </div>
+
+    <div class="card step" data-chk="p5-1">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>5.1 Chạy sam2_points</h3>
+        <div class="codebox">
+          <div class="bar"><span>ví dụ img_013 · đổi tọa độ cho vật của bạn</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/sam2_points.py --image img_013.jpg --pos "400,480" --pos "600,110" --neg "720,300" --sam sam2.1_b.pt --out submission/masks --name tuktuk_img013</pre>
+        </div>
+        <p style="margin:0;color:var(--muted)">Làm thêm 2 vật nữa. Cần ≥ 3 ảnh trong <code class="i">submission/masks/</code>.</p>
+        <div class="grid2">
+          <figure class="fig">
+            <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/09_sam_points_mask_tuktuk.jpg" alt="Mask SAM">
+            <figcaption><b>Kết quả mask</b> — có gồm người lái / hàng không?</figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/sam2_click.jpg" alt="Click SAM">
+            <figcaption><b>Click dương</b> trên vật, <b>âm</b> ngoài vật.</figcaption>
+          </figure>
+        </div>
+        <div class="callout note"><span class="tag">REPORT mục 5</span>
+          <div>Ghi: phiên bản SAM, số click, mask có gồm người/hàng không, lỗi gì.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART 6 -->
+  <section class="section" id="part6">
+    <h2>Part 6 — Calibration, QC, báo cáo, nộp <span class="badge">45 phút</span></h2>
+    <p class="lede">Chốt guideline, QC, quyết định Release / Hold / Rework, rồi kiểm bài.</p>
+
+    <div class="card step" data-chk="p6-1">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>6.1 Calibration (≥ 3 quyết định)</h3>
+        <ol>
+          <li>Gom ca khó: câu hỏi mở v1.0, can_review, lỗi máy lặp, bẫy lọt</li>
+          <li>Điền ≥ 3 dòng <code class="i">submission/qc/calibration_decisions.csv</code> (≥ 1 loi_may, ≥ 1 cau_hoi_mo)</li>
+          <li>Viết <code class="i">submission/guidelines/guideline_v1.1_calibrated.md</code> — chỉ phần bổ sung, mỗi ca có ảnh ví dụ</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p6-2">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>6.2 QC mẫu</h3>
+        <div class="codebox">
+          <div class="bar"><span>PowerShell</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/build_release.py
+python scripts/qc_sample.py --n 5</pre>
+        </div>
+        <ol>
+          <li>Mở ảnh trong <code class="i">work/qc/review/</code></li>
+          <li>Điền <code class="i">submission/qc/qc_review.csv</code> — error_type không trống (ghi <code class="i">khong</code> nếu ổn)</li>
+          <li>Chạy <code class="i">python scripts/qc_report.py</code></li>
+        </ol>
+        <figure class="fig">
+          <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/10_qc_review_overlay.jpg" alt="QC overlay">
+          <figcaption><b>QC overlay:</b> ghi lỗi kèm mẫu số, không chỉ %.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="./Day 08 — Hướng dẫn làm bài (non-tech)_files/decision_tree.png" alt="Cây quyết định">
+          <figcaption><b>Quyết định:</b> Hold → Rework → Release, khớp số liệu.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p6-3">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>6.3 Hoàn thiện REPORT + STUDENT</h3>
+        <ul>
+          <li><code class="i">submission/REPORT.md</code>: đủ 8 mục, số kèm mẫu số (ví dụ 7/12)</li>
+          <li>Mục 7: <b>Release / Hold / Rework</b> + lý do 1 dòng</li>
+          <li>Điền “Kết quả tóm tắt” trong <code class="i">STUDENT.md</code></li>
+          <li>Đổi tiêu đề README: <code class="i"># Day 08 Lab — MSHV - Họ và tên</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card step" data-chk="p6-4">
+      <button class="chk" type="button" aria-label="Đánh dấu xong">✓</button>
+      <div class="body">
+        <h3>6.4 check_submission → push → nộp link</h3>
+        <div class="codebox">
+          <div class="bar"><span>bắt buộc trước khi nộp</span><button class="copy" type="button">Copy</button></div>
+<pre>python scripts/check_submission.py</pre>
+        </div>
+        <div class="callout ok"><span class="tag">Xong</span>
+          <div>Hết dòng <b>LỖI</b> → git push → nộp link repo lên
+          <a href="https://aithucchien.vinuni.edu.vn/" target="_blank" rel="noopener">aithucchien.vinuni.edu.vn</a>.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section class="section" id="checklist">
+    <h2>Checklist nộp bài <span class="badge">đối chiếu SUBMISSION.md</span></h2>
+    <div class="card">
+      <div class="checkrow step" data-chk="n1"><button class="chk" type="button">✓</button><span>Repo <b>public</b>, tên đúng mẫu <code class="i">K5-L2-DAY08-...</code>, mở được khi chưa đăng nhập</span></div>
+      <div class="checkrow step" data-chk="n2"><button class="chk" type="button">✓</button><span>README tiêu đề + STUDENT.md đủ (kể cả tóm tắt)</span></div>
+      <div class="checkrow step" data-chk="n3"><button class="chk" type="button">✓</button><span>≥ 4 commit theo từng Part bằng tài khoản của bạn</span></div>
+      <div class="checkrow step" data-chk="n4"><button class="chk" type="button">✓</button><span>gold_manual.json + batch_reviewed.json hợp lệ</span></div>
+      <div class="checkrow step" data-chk="n5"><button class="chk" type="button">✓</button><span>model_log.csv ≥ 4 dòng (có SAM) + time_log.csv số thật</span></div>
+      <div class="checkrow step" data-chk="n6"><button class="chk" type="button">✓</button><span>pre_traps + traps_key + review_stats</span></div>
+      <div class="checkrow step" data-chk="n7"><button class="chk" type="button">✓</button><span>≥ 3 ảnh mask; calibration ≥ 3; guideline v1.1</span></div>
+      <div class="checkrow step" data-chk="n8"><button class="chk" type="button">✓</button><span>REPORT 8 mục + quyết định Release/Hold/Rework kèm mẫu số</span></div>
+      <div class="checkrow step" data-chk="n9"><button class="chk" type="button">✓</button><span>check_submission.py không còn LỖI; không commit work/, token, *.pt</span></div>
+    </div>
+  </section>
+
+  <!-- ERRORS -->
+  <section class="section" id="loi">
+    <h2>Lỗi hay gặp</h2>
+    <div class="card">
+      <table>
+        <thead><tr><th>Triệu chứng</th><th>Làm gì</th></tr></thead>
+        <tbody>
+          <tr><td>validate: lớp lạ</td><td>Tạo lại Project từ labels_generated.json</td></tr>
+          <tr><td>validate: thiếu ảnh</td><td>Task phải đúng ảnh trong work/tasks/...</td></tr>
+          <tr><td>review_stats thiếu ảnh bẫy</td><td>--pre phải là file đã nạp; export đúng Task batch-review</td></tr>
+          <tr><td>bắt bẫy thấp dù duyệt kỹ</td><td>Có nạp lại pre sau khi sửa? Export đúng Task?</td></tr>
+          <tr><td>prelabel 0 box</td><td>Hạ --conf; kiểm --classes</td></tr>
+          <tr><td>chạy model quá chậm</td><td>Dùng <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/HUONG_DAN_CHI_TIET.html#colab">Colab</a>, hoặc --size n --imgsz 640</td></tr>
+          <tr><td>Colab mất hết file</td><td>Phiên hết hạn — tải zip sau mỗi cụm ô; chạy lại từ ô 0 nếu cần</td></tr>
+          <tr><td>Giải nén zip sai chỗ</td><td>Phải vào thư mục gốc repo (cạnh scripts/). Sai → không thấy work/prelabel</td></tr>
+          <tr><td>Colab không có GPU</td><td>Runtime → Change runtime type → T4 GPU. Hết hạn mức thì chờ vài giờ</td></tr>
+          <tr><td>PowerShell tách chuỗi</td><td>Bọc ngoặc kép: --thr "a=0.3,b=0.4"</td></tr>
+          <tr><td>CSV lỗi định dạng</td><td>Notepad/VS Code UTF-8; tránh Excel</td></tr>
+          <tr><td>qc_review “chưa kiểm”</td><td>error_type trống → điền khong</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="callout warn">
+        <span class="tag">Trễ giờ</span>
+        <div>
+          <ol>
+            <li>Part 5: 2 vật + thêm 1 ảnh đổi bản SAM (vẫn ≥ 3 file mask)</li>
+            <li>Part 4: đừng vẽ vật &lt; 20 px; dùng ignore_region</li>
+            <li>Part 6: qc_sample.py --n 3; vẫn ≥ 3 quyết định calibration</li>
+          </ol>
+          <b>Không bao giờ cắt:</b> gold gán tay, ảnh bẫy, REPORT mục 7.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    File: <code class="i">HUONG_DAN_CHI_TIET.html</code> · Ảnh: <code class="i">walkthrough_images/</code> + <code class="i">docs/assets/</code> ·
+    Chi tiết: <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/GUIDE.md">GUIDE.md</a> · Chấm điểm: <a href="https://wuongg.github.io/K5-L2-Day08-HuongDan/RUBRIC.md">RUBRIC.md</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var KEY = "day08-walkthrough-checks-v2";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { saved = {}; }
+
+  function updateProgress() {
+    var steps = document.querySelectorAll(".step[data-chk]");
+    var done = 0;
+    for (var i = 0; i < steps.length; i++) if (steps[i].classList.contains("done")) done++;
+    var pct = steps.length ? Math.round(done / steps.length * 100) : 0;
+    document.getElementById("progBar").style.width = pct + "%";
+    document.getElementById("progText").textContent = pct + "% (" + done + "/" + steps.length + ")";
+  }
+
+  document.querySelectorAll(".step[data-chk]").forEach(function (step) {
+    var id = step.getAttribute("data-chk");
+    if (saved[id]) step.classList.add("done");
+    var btn = step.querySelector(".chk");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      step.classList.toggle("done");
+      saved[id] = step.classList.contains("done");
+      localStorage.setItem(KEY, JSON.stringify(saved));
+      updateProgress();
+    });
+  });
+  updateProgress();
+
+  document.getElementById("resetChk").addEventListener("click", function () {
+    if (!confirm("Xóa toàn bộ tick checklist?")) return;
+    localStorage.removeItem(KEY);
+    saved = {};
+    document.querySelectorAll(".step[data-chk]").forEach(function (s) { s.classList.remove("done"); });
+    updateProgress();
+  });
+
+  document.querySelectorAll(".codebox").forEach(function (box) {
+    var btn = box.querySelector(".copy");
+    var pre = box.querySelector("pre");
+    if (!btn || !pre) return;
+    btn.addEventListener("click", function () {
+      var text = pre.textContent;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = "Đã copy";
+          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
+        }).catch(function () { btn.textContent = "Ctrl+C thủ công"; });
+      } else {
+        btn.textContent = "Ctrl+C thủ công";
+      }
+    });
+  });
+})();
+</script>
+
+
+</body></html>
