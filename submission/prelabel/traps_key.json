@@ -1,0 +1,177 @@
+{
+ "student": "2A202603105",
+ "seed": 0,
+ "traps": [
+  {
+   "image": "img_005.jpg",
+   "type": "extra",
+   "fake_box": [
+    355.82,
+    9.25,
+    74.82,
+    152.1
+   ],
+   "fake_cls": "car",
+   "id": 412,
+   "ann_id": 61
+  },
+  {
+   "image": "img_029.jpg",
+   "type": "wrong_class",
+   "box": [
+    918.26,
+    438.73,
+    84.89,
+    216.24
+   ],
+   "orig_cls": "person",
+   "fake_cls": "bicycle",
+   "id": 329,
+   "ann_id": 328
+  },
+  {
+   "image": "img_026.jpg",
+   "type": "wrong_class",
+   "box": [
+    401.56,
+    419.7,
+    421.81,
+    259.38
+   ],
+   "orig_cls": "motorbike",
+   "fake_cls": "bicycle",
+   "id": 274,
+   "ann_id": 274
+  },
+  {
+   "image": "img_018.jpg",
+   "type": "missing",
+   "orig_box": [
+    784.93,
+    450.47,
+    45.68,
+    25.4
+   ],
+   "orig_cls": "motorbike"
+  },
+  {
+   "image": "img_033.jpg",
+   "type": "extra",
+   "fake_box": [
+    66.67,
+    123.47,
+    93.37,
+    72.32
+   ],
+   "fake_cls": "truck",
+   "id": 413,
+   "ann_id": 352
+  },
+  {
+   "image": "img_024.jpg",
+   "type": "extra",
+   "fake_box": [
+    100.14,
+    372.58,
+    142.7,
+    77.48
+   ],
+   "fake_cls": "car",
+   "id": 414,
+   "ann_id": 257
+  },
+  {
+   "image": "img_003.jpg",
+   "type": "wrong_class",
+   "box": [
+    29.44,
+    200.81,
+    16.32,
+    37.41
+   ],
+   "orig_cls": "person",
+   "fake_cls": "bicycle",
+   "id": 28,
+   "ann_id": 28
+  },
+  {
+   "image": "img_027.jpg",
+   "type": "loose",
+   "orig_box": [
+    460.07,
+    382.02,
+    101.64,
+    158.5
+   ],
+   "bad_box": [
+    474.6,
+    362.43,
+    101.44,
+    170.25
+   ],
+   "cls": "motorbike",
+   "id": 281,
+   "ann_id": 281
+  },
+  {
+   "image": "img_021.jpg",
+   "type": "loose",
+   "orig_box": [
+    487.57,
+    330.33,
+    65.12,
+    127.68
+   ],
+   "bad_box": [
+    493.41,
+    352.5,
+    66.13,
+    114.38
+   ],
+   "cls": "person",
+   "id": 190,
+   "ann_id": 189
+  },
+  {
+   "image": "img_028.jpg",
+   "type": "missing",
+   "orig_box": [
+    954.23,
+    463.78,
+    69.5,
+    132.33
+   ],
+   "orig_cls": "motorbike"
+  },
+  {
+   "image": "img_025.jpg",
+   "type": "loose",
+   "orig_box": [
+    698.79,
+    173.52,
+    172.61,
+    456.55
+   ],
+   "bad_box": [
+    682.1,
+    229.77,
+    166.51,
+    422.8
+   ],
+   "cls": "person",
+   "id": 260,
+   "ann_id": 260
+  },
+  {
+   "image": "img_006.jpg",
+   "type": "missing",
+   "orig_box": [
+    251.66,
+    395.17,
+    215.06,
+    183.21
+   ],
+   "orig_cls": "motorbike"
+  }
+ ]
+}
